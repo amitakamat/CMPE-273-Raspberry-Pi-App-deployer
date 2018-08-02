@@ -12,26 +12,22 @@ SSL is enabled on nginx with self signed certificate. So we need to use https in
 
 Architecture Diagram :  
 
-[![Architecture-Overview-Diagram.png](https://s22.postimg.org/mvz6w7cf5/Architecture-_Overview-_Diagram.png)](https://postimg.org/image/4gepysyal/)
+![Architecture-Overview-Diagram](/Architecture-Overview-Diagram.png "Architecture diagram")
 
 To see list of Pi's connected double click client IP filed in UI. 
 whenever client code is run on PI, it first registers itself to the rabbit server which in turen creates a queue for the client on which requests are sent. The client continuously listens on its queue for requests.
 To find your public repositories click "Find"
 
-[![Homepage.png](https://s14.postimg.org/jxms8d49t/Homepage.png)](https://postimg.org/image/kn5kkq4t9/)
+![Homepage](/Homepage.png "Home page")
 
 You need to authorize your app on github before you deploy.
 
-[![authorize app.png](https://s30.postimg.org/64zlh15v5/authorize_app.png)](https://postimg.org/image/vb0jnv759/)
+![Authorize](/authorize%20app.png "Authorize")
 
 Sending deploy request for the first time creates a webhook on the repository, installs packages under requirements.txt and runs the app.
 Whenever commits are made to the repository, webhooks get triggered, and the packages get installed again and the app is run again.
 
-[![webhook.png](https://s16.postimg.org/w2gnlyz9x/webhook.png)](https://postimg.org/image/x4qu4ii35/)
+![Webhook](/webhook.png "Webhook")
 
 You can see the request added to the queue on RabbitMQ dashboard when we send request.  
 You can also check the status of the request by Client IP by clicking check status or by just refreshing after deploy request.
-
-[![Screenshot (211).png](https://s27.postimg.org/n6voxta77/Screenshot_211.png)](https://postimg.org/image/7ledduy8v/)
-
-[![Screenshot (209).png](https://s21.postimg.org/y3bin22dj/Screenshot_209.png)](https://postimg.org/image/50x8k8g3n/)
